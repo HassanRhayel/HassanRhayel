@@ -1,0 +1,282 @@
+name: guesstheflag
+description: A new Flutter project.
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.3 <4.0.0'
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+     - assets/americas/united-states.png
+     - assets/americas/canada.png
+     - assets/americas/mexico.png
+     - assets/americas/brazil.png
+     - assets/americas/argentina.png
+     - assets/americas/colombia.png
+     - assets/americas/peru.png
+     - assets/americas/venezuela.png
+     - assets/americas/chile.png
+     - assets/americas/ecuador.png
+     - assets/americas/guatemala.png
+     - assets/americas/cuba.png
+     - assets/americas/bolivia.png
+     - assets/americas/dominican-republic.png
+     - assets/americas/haiti.png
+     - assets/americas/honduras.png
+     - assets/americas/paraguay.png
+     - assets/americas/el-salvador.png
+     - assets/americas/nicaragua.png
+     - assets/americas/costa-rica.png
+     - assets/americas/panama.png
+     - assets/americas/uruguay.png
+     - assets/americas/jamaica.png
+     - assets/americas/trinidad-and-tobago.png
+     - assets/americas/guyana.png
+     - assets/americas/suriname.png
+     - assets/americas/belize.png
+     - assets/americas/bahamas.png
+     - assets/americas/barbados.png
+     - assets/americas/saint-lucia.png
+     - assets/americas/grenada.png
+     - assets/americas/saint-vincent-and-the-grenadines.png
+     - assets/americas/antigua-and-barbuda.png
+     - assets/americas/saint-kitts-and-nevis.png
+     - assets/americas/dominica.png
+     - assets/europe/albania.png
+     - assets/europe/andorra.png
+     - assets/europe/austria.png
+     - assets/europe/belarus.png
+     - assets/europe/belgium.png
+     - assets/europe/bosnia-and-herzegovina.png
+     - assets/europe/bulgaria.png
+     - assets/europe/croatia.png
+     - assets/europe/czech-republic.png
+     - assets/europe/denmark.png
+     - assets/europe/estonia.png
+     - assets/europe/finland.png
+     - assets/europe/france.png
+     - assets/europe/georgia.png
+     - assets/europe/germany.png
+     - assets/europe/greece.png
+     - assets/europe/hungary.png
+     - assets/europe/iceland.png
+     - assets/europe/ireland.png
+     - assets/europe/italy.png
+     - assets/europe/kosovo.png
+     - assets/europe/latvia.png
+     - assets/europe/liechtenstein.png
+     - assets/europe/lithuania.png
+     - assets/europe/luxembourg.png
+     - assets/europe/malta.png
+     - assets/europe/moldova.png
+     - assets/europe/monaco.png
+     - assets/europe/montenegro.png
+     - assets/europe/netherlands.png
+     - assets/europe/north-macedonia.png
+     - assets/europe/norway.png
+     - assets/europe/poland.png
+     - assets/europe/portugal.png
+     - assets/europe/romania.png
+     - assets/europe/san-marino.png
+     - assets/europe/serbia.png
+     - assets/europe/slovakia.png
+     - assets/europe/slovenia.png
+     - assets/europe/spain.png
+     - assets/europe/sweden.png
+     - assets/europe/switzerland.png
+     - assets/europe/turkey.png
+     - assets/europe/ukraine.png
+     - assets/europe/united-kingdom.png
+     - assets/asia/afghanistan.png
+     - assets/asia/armenia.png
+     - assets/asia/azerbaijan.png
+     - assets/asia/bahrain.png
+     - assets/asia/bangladesh.png
+     - assets/asia/bhutan.png
+     - assets/asia/brunei.png
+     - assets/asia/cambodia.png
+     - assets/asia/china.png
+     - assets/asia/cyprus.png
+     - assets/asia/india.png
+     - assets/asia/indonesia.png
+     - assets/asia/iran.png
+     - assets/asia/iraq.png
+     - assets/asia/japan.png
+     - assets/asia/jordan.png
+     - assets/asia/kazakhstan.png
+     - assets/asia/kuwait.png
+     - assets/asia/kyrgyzstan.png
+     - assets/asia/laos.png
+     - assets/asia/lebanon.png
+     - assets/asia/malaysia.png
+     - assets/asia/maldives.png
+     - assets/asia/mongolia.png
+     - assets/asia/myanmar.png
+     - assets/asia/nepal.png
+     - assets/asia/north-korea.png
+     - assets/asia/oman.png
+     - assets/asia/pakistan.png
+     - assets/asia/palestine.png
+     - assets/asia/philippines.png
+     - assets/asia/qatar.png
+     - assets/asia/russia.png
+     - assets/asia/saudi-arabia.png
+     - assets/asia/singapore.png
+     - assets/asia/south-korea.png
+     - assets/asia/sri-lanka.png
+     - assets/asia/syria.png
+     - assets/asia/taiwan.png
+     - assets/asia/tajikistan.png
+     - assets/asia/thailand.png
+     - assets/asia/timor-leste.png
+     - assets/asia/turkmenistan.png
+     - assets/asia/united-arab-emirates.png
+     - assets/asia/uzbekistan.png
+     - assets/asia/vietnam.png
+     - assets/asia/yemen.png
+     - assets/africa/algeria.png
+     - assets/africa/angola.png
+     - assets/africa/benin.png
+     - assets/africa/botswana.png
+     - assets/africa/burkina-faso.png
+     - assets/africa/burundi.png
+     - assets/africa/cameroon.png
+     - assets/africa/central-african-republic.png
+     - assets/africa/chad.png
+     - assets/africa/comoros.png
+     - assets/africa/democratic-republic-of-the-congo.png
+     - assets/africa/djibouti.png
+     - assets/africa/egypt.png
+     - assets/africa/equatorial-guinea.png
+     - assets/africa/eritrea.png
+     - assets/africa/ethiopia.png
+     - assets/africa/gabon.png
+     - assets/africa/gambia.png
+     - assets/africa/ghana.png
+     - assets/africa/guinea.png
+     - assets/africa/guinea-bissau.png
+     - assets/africa/ivory-coast.png
+     - assets/africa/kenya.png
+     - assets/africa/lesotho.png
+     - assets/africa/liberia.png
+     - assets/africa/libya.png
+     - assets/africa/madagascar.png
+     - assets/africa/malawi.png
+     - assets/africa/mali.png
+     - assets/africa/mauritania.png
+     - assets/africa/mauritius.png
+     - assets/africa/morocco.png
+     - assets/africa/mozambique.png
+     - assets/africa/namibia.png
+     - assets/africa/niger.png
+     - assets/africa/nigeria.png
+     - assets/africa/rwanda.png
+     - assets/africa/sao-tome-and-principe.png
+     - assets/africa/senegal.png
+     - assets/africa/seychelles.png
+     - assets/africa/sierra-leone.png
+     - assets/africa/somalia.png
+     - assets/africa/south-africa.png
+     - assets/africa/south-sudan.png
+     - assets/africa/sudan.png
+     - assets/africa/tanzania.png
+     - assets/africa/togo.png
+     - assets/africa/tunisia.png
+     - assets/africa/uganda.png
+     - assets/africa/zambia.png
+     - assets/africa/zimbabwe.png
+     - assets/restoftheworld/australia.png
+     - assets/restoftheworld/fiji.png
+     - assets/restoftheworld/kiribati.png
+     - assets/restoftheworld/marshall-islands.png
+     - assets/restoftheworld/micronesia.png
+     - assets/restoftheworld/nauru.png
+     - assets/restoftheworld/new-zealand.png
+     - assets/restoftheworld/palau.png
+     - assets/restoftheworld/papua-new-guinea.png
+     - assets/restoftheworld/samoa.png
+     - assets/restoftheworld/solomon-islands.png
+     - assets/restoftheworld/tonga.png
+     - assets/restoftheworld/tuvalu.png
+     - assets/restoftheworld/vanuatu.png
+
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  #fonts:
+  #  - family: Schyler
+  #    fonts:
+  #      - asset: assets/fonts/Schyler-Regular.ttf
+  #      - asset: assets/fonts/Schyler-Italic.ttf
+  #      - asset: assets/fonts/Lato-Bold.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
