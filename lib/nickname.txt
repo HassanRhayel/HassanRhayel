@@ -1,0 +1,48 @@
+//These files are in the file manager in 000webhost
+<?php
+include 'connect.php';
+$hostname = "localhost";
+$database = "id21728079_users";
+$username = "id21728079_hassan";
+$password = "database_USERS1";
+
+// Create connection
+$con = mysqli_connect($hostname, $username, $password, $database);
+
+// Check connection
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Assuming the request method is POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve nickname and finalScore from the POST request
+    $nickname = $_POST['nickname'];
+    $finalScore = $_POST['finalScore'];
+
+    // Sanitize input to prevent SQL injection
+    $sanitizedNickname = mysqli_real_escape_string($con, $nickname);
+    $sanitizedFinalScore = mysqli_real_escape_string($con, $finalScore);
+
+    // Insert data into the 'scores' table
+    $insertQuery = "INSERT INTO scores (nickname, finalscore) VALUES ('$sanitizedNickname', '$sanitizedFinalScore')";
+
+    if (mysqli_query($con, $insertQuery)) {
+        $response = array('status' => 'success', 'message' => 'Data inserted successfully');
+    } else {
+        $response = array('status' => 'error', 'message' => 'Failed to insert data');
+    }
+
+    // Send the JSON response
+    header('Content-Type: application/json');
+    echo json_encode($response);
+} else {
+    // Invalid request method
+    $response = array('status' => 'error', 'message' => 'Invalid request method');
+    header('Content-Type: application/json');
+    echo json_encode($response);
+}
+
+// Close the database connection
+mysqli_close($con);
+?>

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'signup.dart';
-import 'login.dart';
+import 'game_modes.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -56,45 +55,22 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const LogInPage()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      textStyle: const TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-                    ),
-                    child: const Text('Login'),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ModeSelectionPage()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  textStyle: const TextStyle(
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
                   ),
-                  const SizedBox(width: 16.0),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const SignUpPage()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                      textStyle: const TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
-                    ),
-                    child: const Text('Sign Up'),
-                  ),
-                ],
+                  padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+                ),
+                child: const Text('Play'),
               ),
             ],
           ),
@@ -103,6 +79,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-
-

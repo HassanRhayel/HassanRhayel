@@ -1,0 +1,15 @@
+//These files are in the file manager in 000webhost
+<?php
+$hostname ="localhost";
+$username ="id21728079_hassan";
+$password ="database_USERS1";
+$dbname ="id21728079_users";
+
+$con=mysqli_connect($hostname, $username, $password, $dbname);
+// Check connection
+if (mysqli_connect_errno())
+{
+echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+?>

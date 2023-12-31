@@ -1,0 +1,41 @@
+//These files are in the file manager in 000webhost
+
+<?php
+include('connect.php');
+
+mysqli_select_db($con, 'users');
+
+$sql = "INSERT TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+)";
+
+if ($con->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $con->error;
+}
+
+$con->close();
+?>
+//another table
+<?php
+include('connect.php');
+
+mysqli_select_db($con, 'users');
+
+$sql = "INSERT TABLE scores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nickname VARCHAR(255) NOT NULL,
+    finalscore VARCHAR(255) NOT NULL
+)";
+
+if ($con->query($sql) === TRUE) {
+    echo "Table created successfully";
+} else {
+    echo "Error creating table: " . $con->error;
+}
+
+$con->close();
+?>

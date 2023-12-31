@@ -91,7 +91,6 @@ class ModeSelectionPage extends StatelessWidget {
             ),
 
           ),
-          // Bottom 50% - White with Buttons
           Container(
             color: Colors.white,
             height: MediaQuery.of(context).size.height * 0.5,

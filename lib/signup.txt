@@ -1,0 +1,61 @@
+//These files are in the file manager in 000webhost
+
+<?php
+include('connect.php');
+
+header('Content-Type: application/json');
+
+$hostname = "localhost";
+$dbname = "id21728079_users";
+$username = "id21728079_hassan";
+$password = "database_USERS1";
+
+$con = mysqli_connect($hostname, $username, $password, $dbname);
+
+if (mysqli_connect_errno()) {
+    echo json_encode(['status' => 'error', 'message' => 'Failed to connect to MySQL: ' . mysqli_connect_error()]);
+    exit();
+}
+
+function userExists($con, $email)
+{
+    $query = "SELECT * FROM users WHERE email = '$email'";
+    $result = mysqli_query($con, $query);
+
+    return mysqli_num_rows($result) > 0;
+}
+
+try {
+    $data = json_decode(file_get_contents('php://input'), true);
+    $email = $data['email'];
+    $password = $data['password'];
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo json_encode(['status' => 'error', 'message' => 'Email Format Is Invalid!']);
+        exit();
+    }
+
+    if (userExists($con, $email)) {
+        echo json_encode(['status' => 'error', 'message' => 'User Exists']);
+        exit();
+    }
+
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $insertQuery = "INSERT INTO users (email, password) VALUES ('$email', '$hashedPassword')";
+    $insertResult = mysqli_query($con, $insertQuery);
+
+    if ($insertResult) {
+        echo json_encode(['status' => 'success', 'message' => 'User successfully registered']);
+        exit();
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Failed to register user']);
+        exit();
+    }
+} catch (Exception $e) {
+    echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+    exit();
+} finally {
+    mysqli_close($con);
+}
+
+?>

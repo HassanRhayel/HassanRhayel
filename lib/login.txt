@@ -1,0 +1,58 @@
+//These files are in the file manager in 000webhost
+<?php
+include('connect.php');
+
+header('Content-Type: application/json');
+
+$hostname = "localhost";
+$dbname = "id21728079_users";
+$username = "id21728079_hassan";
+$password = "database_USERS1";
+
+$con = mysqli_connect($hostname, $username, $password, $dbname);
+
+if (mysqli_connect_errno()) {
+    echo json_encode(['status' => 'error', 'message' => 'Failed to connect to MySQL: ' . mysqli_connect_error()]);
+    exit();
+}
+
+function verifyPassword($hashedPassword, $password)
+{
+    return password_verify($password, $hashedPassword);
+}
+
+try {
+    $data = json_decode(file_get_contents('php://input'), true);
+    $email = $data['email'];
+    $password = $data['password'];
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo json_encode(['status' => 'error', 'message' => 'Email Format Is Invalid!']);
+        exit();
+    }
+
+    $query = "SELECT * FROM users WHERE email = '$email'";
+    $result = mysqli_query($con, $query);
+
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $hashedPassword = $row['password'];
+
+        if (verifyPassword($hashedPassword, $password)) {
+            echo json_encode(['status' => 'success', 'message' => 'Login successful']);
+            exit();
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Incorrect password']);
+            exit();
+        }
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'User not found']);
+        exit();
+    }
+} catch (Exception $e) {
+    echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
+    exit();
+} finally {
+    mysqli_close($con);
+}
+?>

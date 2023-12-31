@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
 import 'flag_button.dart';
-import 'home_page.dart';
+import 'play.dart';
+import 'nickname.dart';
 
 class FlagGuessPage extends StatefulWidget {
   final String mode;
-  const FlagGuessPage({Key? key, required this.mode}) : super(key: key);
+  const FlagGuessPage({Key? key, required this.mode, }) : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
@@ -90,9 +91,9 @@ class _FlagGuessPageState extends State<FlagGuessPage> {
 
       _startFading();
       _startTimeFading();
+
       return;
     }
-
     _correctCountry = _remainingCountries[random.nextInt(_remainingCountries.length)];
     _choices = _generateChoices(_correctCountry);
     _resultMessage = '';
@@ -127,7 +128,6 @@ class _FlagGuessPageState extends State<FlagGuessPage> {
     choices.shuffle();
     return choices;
   }
-
   void _makeGuess(String selectedCountry) {
     setState(() {
       _timer?.cancel();
@@ -139,7 +139,6 @@ class _FlagGuessPageState extends State<FlagGuessPage> {
       _startNewRound();
     });
   }
-
   void _backToMainMenu() {
     if (_gameOver) {
       Navigator.pushReplacement(
@@ -148,7 +147,6 @@ class _FlagGuessPageState extends State<FlagGuessPage> {
       );
     }
   }
-
   void _startFading() {
     Timer.periodic(const Duration(milliseconds: 100), (timer) {
       setState(() {
@@ -173,7 +171,6 @@ class _FlagGuessPageState extends State<FlagGuessPage> {
       });
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -263,7 +260,6 @@ class _FlagGuessPageState extends State<FlagGuessPage> {
                 ],
               ),
             ),
-          // Center the result message
           if (_resultMessage.isNotEmpty)
             Padding(
               padding: const EdgeInsets.only(bottom: 20.0),
@@ -276,7 +272,14 @@ class _FlagGuessPageState extends State<FlagGuessPage> {
             ),
           if (_gameOver)
             ElevatedButton(
-              onPressed: _backToMainMenu,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NicknamePage(finalScore: _score),
+                  ),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,
                 textStyle: const TextStyle(
@@ -285,13 +288,32 @@ class _FlagGuessPageState extends State<FlagGuessPage> {
                 ),
                 padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
               ),
-              child: const Text('Back to Main Menu'),
+              child: const Text('Leaderboards'),
             ),
+          Visibility(
+            visible: _gameOver,
+            child: Column(
+              children: [
+                const SizedBox(height: 20.0),
+                ElevatedButton(
+                  onPressed: _backToMainMenu,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    textStyle: const TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+                  ),
+                  child: const Text('Back to Main Menu'),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
-
   @override
   void dispose() {
     _timer?.cancel();
