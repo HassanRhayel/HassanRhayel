@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="icon" href="public/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("PKyYYF-jwzmkkmBAr");
+        })();
+    </script>
+</head>
+<body>
+    <header class="header">
+        <a href="#home" class="logo">Hassan 
+        <span>Rhayel</span></a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#journey">Journey</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>  
+<!--Home Section below-->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Hi, It's <span>Hassan</span></h1>
+            <h3 class="text-animation">I'm a <span></span></h3>
+            <p><b>Results-driven professional with adept communication and problem-solving abilities. A 
+                collaborative team player recognized for successfully navigating dynamic challenges and 
+                inspiring through leadership. Demonstrates a mature and responsible approach to every task and 
+                situation encountered.  </p>
+                <h3 class="aboutme">About Me</h3>
+                <p><b>I'm a passionate <span>computer science graduate</span> with a
+                 strong foundation in programming, web development, and database management.  I possess a diverse 
+                 skillset that allows me to tackle projects from back-end development using Python and Java to front-end
+                 development with HTML, CSS, and Javascript.  I'm also well-versed in building user interfaces with frameworks
+                 like React and Bootstrap.</p><br>
+
+                <p><span><b> Feel free to browse my portfolio to see examples of my work!</span></b></p>
+
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/hassan-rhayel-7b3274239/" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://github.com/HassanRhayel" target="_blank"><i class='bx bxl-github' ></i></a>
+                <a href="mailto:hassanrhayel9@gmail.com" target="_blank"><i class='bx bxs-envelope' ></i></a>
+            </div>
+
+           <div class="btn-group">
+            <a href="public/cv.pdf" target="_blank" class="btn">Resume</a>
+            <a href="#contact" class="btn">Contact</a>
+           </div> 
+        </div>
+        <div class="home-img">
+            <img src="assets/profile.jpg" alt="">
+        </div>
+    </section>
+<!--Journey Section below-->
+    <section class="journey" id="journey">
+        <h2 class="heading">Journey</h2>
+
+        <div class="timeline-items">
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                    <div class="timeline-date">2021-2024</div>
+                    <div class="timeline-content">
+                        <h3>Lebanese International University (LIU)</h3>
+                        <p>Bachelor Of Science In Computer Science</p>
+                    </div>
+                
+            </div>
+
+        </div>
+    </section>
+<!--Skills Section below-->
+    <section class="skills" id="skills">
+        <div class="skills-box">
+            <h2 class="heading">Skills</h2>
+
+            <div class="wrapper">
+                <div class="skill-item">
+
+                    <div class="icon-with-text">
+                        <i class='bx bxl-java' data-text="Java"></i>
+                        <i class='bx bxl-javascript' data-text="Javascript"></i> 
+                        <i class='bx bxl-postgresql' data-text="postgresql"></i> 
+
+         
+                    </div>
+
+                    <div class="icon-with-text">
+                        <i class='bx bxl-bootstrap' data-text="Bootstrap"></i>
+                        <i class='bx bxl-html5' data-text="Html5"></i>
+                        <i class='bx bxl-css3' data-text="Css3"></i>
+                        <i class='bx bxl-react' data-text="React.JS"></i>
+                       
+                        
+                    </div>
+                        
+                </div>
+
+                <div class="skill-item">
+                     
+                    <div class="icon-with-text">
+                        <i class='bx bxl-unity' data-text="Unity"></i>
+                        <i class='bx bxl-flutter' data-text="Flutter"></i>
+                        <i class='bx bxl-git' data-text="Git"></i>
+         
+                    </div>
+
+                    <div class="icon-with-text">
+                        <i class='bx bxl-flask' data-text="Flask"></i>
+                        <i class='bx bxl-django' data-text="Django"></i>
+                        <i class='bx bx-data' data-text="Database"></i>
+                        <i class='bx bxl-php' data-text="PhP"></i>
+                    </div>
+                        
+                </div>
+
+                <div class="skill-item">
+                     
+                    <div class="icon-with-text">
+                        <i class='bx bxl-python' data-text="Python"></i>
+                        <i class='bx bxl-android' data-text="AndroidStudio"></i>
+                        <i class='bx bxl-figma' data-text="Figma"></i>
+                        
+                    </div>
+                    
+                     
+                        <div class="icon-with-text">
+                            <i class='bx bxl-nodejs' data-text="Node.JS"></i>
+                            <i class='bx bxl-github' data-text="Github"></i>
+                            <i class='bx bxl-visual-studio' data-text="VSCode"></i>
+                            <i class='bx bxl-typescript' data-text="Typescript"></i>
+                            
+                        </div>
+                </div>
+                        
+            </div>
+
+        </div>
+    </div>
+    </section>
+    <!--Projects Section below-->
+    <section class="projects" id="projects">
+        <div class="projects-box">
+            <h2 class="heading">Projects</h2>
+            <div class="project-wrapper">
+                <div class="project-item">
+                    <div class="image-container">
+                        <div class="image-slider">
+                        <img src="assets/image.jpg" alt="" class="project-image">
+                        <img src="assets/image2.jpg" alt="" class="project-image">
+                        <img src="assets/image3.jpg" alt="" class="project-image">
+                        <img src="assets/image4.jpg" alt="" class="project-image">
+                        </div>
+                        </div>
+                    <div class="header-with-link">
+                        <h2>Automated Attendance System Using Face Recognition</h2>
+                        <a href="https://github.com/MohamadBahja/Face_Recognition_Attendance_System" class="github-link">
+                            <i class='bx bxl-github'></i>
+                        </a>
+                    </div>
+                    <p>Our project, the Automated Attendance System Using Face Recognition, revolutionizes traditional attendance tracking in educational and organizational settings. Leveraging advanced facial recognition technology, it automates the attendance process with real-time accuracy, ensuring efficiency, security, and scalability. This innovative solution enhances user experience through a user-friendly interface and robust data management, promising a transformative impact on administrative workflows.</p>
+                </div>
+                <div class="project-item2">
+                    <div class="image-container2">
+                        <div class="image-slider2">
+                            <img src="assets/image5.png" alt="" class="project2-image" style="height:50rem;">
+                        </div>
+                    </div>
+                    <div class="content-container2">
+                        <div class="header-with-link2">
+                            <h2>Guess The Flag</h2>
+                            <a href="https://github.com/HassanRhayel/guesstheflag" class="github-link">
+                                <i class='bx bxl-github'></i>
+                            </a>
+                        </div> 
+                        <p>Guess the Flag is an engaging mobile game that tests your knowledge of world flags across different continents. With modes like Americas, Europe, Asia, Africa, and Master Vexillologist, challenge yourself to identify flags and compete for high scores. Enjoy learning about countries while sharpening your flag recognition skills!</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+<!--Contact Section below-->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form id="contact-form">
+            <div class="input-group">
+                <div class="input-box">
+                    <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+                    <input type="email" id="email_id" name="email_id" placeholder="Email" required>
+                </div>
+                <div class="input-box">
+                    <input type="number" id="phone" name="phone" placeholder="Phone Number">
+                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                </div>
+            </div>
+        
+            <div class="input-group-2">
+                <textarea id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <input type="submit" onclick="sendMail()" value="Send Message" class="btn">
+            </div>
+        </form>
+    </section>
+    <!--Footer Section below-->
+    <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/hassan-rhayel-7b3274239/" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://github.com/HassanRhayel" target="_blank"><i class='bx bxl-github' ></i></a>
+                <a href="mailto:hassanrhayel9@gmail.com" target="_blank"><i class='bx bxs-envelope' ></i></a>
+        </div>
+
+        <ul class="list">
+            
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#journey">Journey</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+        </ul>
+        <p class="copyright">
+            &#169; Hassan Rhayel | All Rights Reserved
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        function sendMail(){
+            var params = {
+                from_name : document.getElementById("fullname").value,
+                email_id : document.getElementById("email_id").value,
+                subject : document.getElementById("subject").value,
+                message : document.getElementById("message").value,
+                phone : document.getElementById("phone").value,
+            }
+            emailjs.send("service_2k6qb8k","template_ybe849m", params).then(alert("Email Sent!"))
+        }
+    </script>
+    
+    
+</body>
+</html>

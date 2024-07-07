@@ -1,0 +1,83 @@
+.project-item2 {
+    margin-left: 6.5rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 3px solid rgba(238, 238, 238, 0.2);
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 70rem;
+    height: 55rem;
+    padding: 1rem;
+    display: grid; /* Change to grid */
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    color: white;
+    transition: 0.4s ease-in-out;
+    max-width: 600px;
+}
+
+.project-item2:hover {
+    border-color: var(--main-color);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+
+.image-container2 {
+    grid-column: 1 / 2; /* Place in the first column */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Ensure the image container takes up the full height */
+}
+
+.header-with-link2, .project-item2 p {
+    grid-column: 2 / 3; /* Place in the second column */
+
+}
+.content-container2{
+    margin-top: 10rem;
+}
+
+.header-with-link2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.header-with-link2 h2 {
+    color: var(--main-color);
+    margin: 0;
+    flex-grow: 1;
+    text-align: left;
+    font-size: 2rem;
+}
+
+.header-with-link2 a {
+    color: white;
+    font-size: 3.5rem;
+    margin-right: 4rem;
+}
+
+.github-link {
+    color: white;
+    font-size: 3.5rem;
+    margin-left: 1rem;
+}
+
+.project-item2 p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    text-align: left;
+    margin-top: 3rem; /* Add margin-top to move the paragraph down */
+}
+
+@media (max-width: 768px) {
+    .project-item2 {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+
+    .header-with-link2, .project-item2 p {
+        grid-column: 1 / 2; /* Place in the first column */
+    }
+}
